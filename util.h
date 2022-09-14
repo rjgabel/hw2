@@ -11,22 +11,21 @@
  *  Both functions should run in time O(n*log(n)) and not O(n^2)
  */
 template <typename T>
-std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
-{
-
-
-
-
-
+std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2) {
+    std::set<T> set{};
+    for (auto it = s1.begin(); it != s1.end(); it++) {
+        if (s2.count(*it)) {
+            set.insert(*it);
+        }
+    }
+    return set;
 }
-template <typename T>
-std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
-{
-
-
-
-
-
+template <typename T> std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2) {
+    std::set<T> set = s1;
+    for (auto it = s2.begin(); it != s2.end(); it++) {
+        set.insert(*it);
+    }
+    return set;
 }
 
 /***********************************************/
