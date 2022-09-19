@@ -6,8 +6,8 @@ Clothing::Clothing(const std::string category, const std::string name,
     : Product(category, name, price, qty), size(size), brand(brand) {}
 
 std::set<std::string> Clothing::keywords() const {
-    auto name_set = parseStringToWords(name_);
-    auto brand_set = parseStringToWords(brand);
+    std::set<std::string> name_set = parseStringToWords(name_);
+    std::set<std::string> brand_set = parseStringToWords(brand);
     return setUnion(name_set, brand_set);
 }
 

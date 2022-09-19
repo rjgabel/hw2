@@ -5,8 +5,8 @@ Movie::Movie(const std::string category, const std::string name, double price,
     : Product(category, name, price, qty), genre(genre), rating(rating) {}
 
 std::set<std::string> Movie::keywords() const {
-    auto set = parseStringToWords(name_);
-    set.insert(genre);
+    std::set<std::string> set = parseStringToWords(name_);
+    set.insert(convToLower(genre));
     return set;
 }
 
